@@ -35,6 +35,8 @@ def lambda_handler(event, context):
         # x_max = (float)(event.get(QUERY_STRING_PARAMETERS).get('x_max') or 1.8)
         # y_min = (float)(event.get(QUERY_STRING_PARAMETERS).get('y_min') or -2.0)
         # y_max = (float)(event.get(QUERY_STRING_PARAMETERS).get('y_max') or 2.0)
+        # cx = (float)(event.get(QUERY_STRING_PARAMETERS).get('cx') or -0.8)
+        # cy = (float)(event.get(QUERY_STRING_PARAMETERS).get('cy') or 0.165)
         # iterations = (int)(event.get(QUERY_STRING_PARAMETERS).get('iterations') or 100)
         # threshold = (int)(event.get(QUERY_STRING_PARAMETERS).get('threshold') or 10)
 
@@ -44,11 +46,15 @@ def lambda_handler(event, context):
         x_max = 1.5
         y_min = -2.0
         y_max = 2.0
+        cx = -0.8
+        cy = 0.165
         iterations = 100
         threshold = 10
 
         # 画像を作成
         image = Image.new('RGB', (width, height), (0, 0, 0))
+
+        c = complex(cx, cy)
 
         for py in range(height):
             y = py / height * (y_max - y_min) + y_min
@@ -58,7 +64,7 @@ def lambda_handler(event, context):
                 v = complex(0, 0)
                 color = 0
                 for n in range(iterations):
-                    v = v * v + z
+                    v = v * v + c  # Constant c is used instead of z
                     if abs(v) > threshold:
                         color = 255 - threshold * n
                         break
