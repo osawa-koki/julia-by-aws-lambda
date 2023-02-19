@@ -42,8 +42,8 @@ def lambda_handler(event, context):
 
         width = 512
         height = 512
-        x_min = -2.5
-        x_max = 1.5
+        x_min = -2.0
+        x_max = 2.0
         y_min = -2.0
         y_max = 2.0
         cx = -0.8
@@ -61,11 +61,10 @@ def lambda_handler(event, context):
             for px in range(width):
                 x = px / width * (x_max - x_min) + x_min
                 z = complex(x, y)
-                v = complex(0, 0)
                 color = 0
                 for n in range(iterations):
-                    v = v * v + c  # Constant c is used instead of z
-                    if abs(v) > threshold:
+                    z = z * z + c  # Constant c is used instead of z
+                    if abs(z) > threshold:
                         color = 255 - threshold * n
                         break
                 image.putpixel((px, py), (color, color, color))
