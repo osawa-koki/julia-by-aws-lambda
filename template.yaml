@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  mandelbrot-by-aws-lambda
+  julia-by-aws-lambda
 
-  Sample SAM Template for mandelbrot-by-aws-lambda
+  Sample SAM Template for julia-by-aws-lambda
 
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
