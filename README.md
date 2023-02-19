@@ -4,9 +4,25 @@
 
 ![成果物](./docs/img/fruit.png)  
 
+## 環境情報
+
+| Name | Version |
+| --- | --- |
+| AWS CLI | 2.9.17 |
+| AWS SAM CLI | 1.73.0 |
+| Docker | 20.10.17 |
+
 ## イロイロ情報
 
-### AWS SAM CLI のインストール
+### AWS CLIのインストール
+
+[公式ページ](https://docs.aws.amazon.com/ja_jp/cli/latest/userguide/install-cliv2.html)の説明に沿って、インストールします。  
+
+### Dockerのインストール
+
+[公式ページ](https://docs.docker.com/get-docker/)の説明に沿って、インストールします。  
+
+### AWS SAM CLIのインストール
 
 [公式ページ](https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/install-sam-cli.html)の説明に沿って、インストールします。  
 AWS SAM CLIとは、Serverless Application Model の略称でAWS Lambdaのローカル実行環境を提供するツールです。  
