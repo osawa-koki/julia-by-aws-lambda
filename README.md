@@ -1,6 +1,6 @@
 # julia-by-aws-lambda
 
-🌵🌵🌵 AWS Lambdaでジュリア集合を描画するサンプルです。  
+🐩🐩🐩 AWS Lambdaでジュリア集合を描画するサンプルです。  
 
 ![成果物](./docs/img/fruit.png)  
 
